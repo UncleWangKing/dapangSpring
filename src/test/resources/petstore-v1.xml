@@ -4,5 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="petStore" class="com.dapang.spring.service.v1.PetStoreService"
+    <bean id="petStore" class="com.dapang.spring.service.v1.PetStoreService" scope="">
+
+    </bean>
+
 </beans>
