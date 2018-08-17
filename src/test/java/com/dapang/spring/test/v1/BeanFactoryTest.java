@@ -1,6 +1,7 @@
 package com.dapang.spring.test.v1;
 
 import com.dapang.spring.beans.core.io.ClassPathResource;
+import com.dapang.spring.beans.core.io.FileSystemResource;
 import com.dapang.spring.beans.factory.BeanCreationException;
 import com.dapang.spring.beans.factory.BeanDefinitionStoreException;
 import com.dapang.spring.beans.factory.xml.XmlBeanDefinitionReader;
@@ -60,7 +61,7 @@ public class BeanFactoryTest {
 
         reader.loadBeanDefinitions(new ClassPathResource("petstore-v1.xml"));
         try{
-            factory.getBean("invalidBean");
+            factory.getBean("invalid");
         }catch(BeanCreationException e){
             return;
         }
@@ -70,7 +71,7 @@ public class BeanFactoryTest {
     public void testInvalidXML(){
 
         try{
-            reader.loadBeanDefinitions(new ClassPathResource("xxxx.xml"));
+            reader.loadBeanDefinitions(new FileSystemResource("invalid"));
         }catch(BeanDefinitionStoreException e){
             return;
         }

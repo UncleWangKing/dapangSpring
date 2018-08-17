@@ -14,9 +14,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class DefaultBeanFactory extends DefaultSingletonBeanRegistry
         implements ConfigurableBeanFactory,BeanDefinitionRegistry{
-
-
-
     private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>(64);
     private ClassLoader beanClassLoader;
 
